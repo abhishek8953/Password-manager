@@ -10,7 +10,8 @@ const requireAuth = require("./middlewares/requireAuth");
 const nodemailer = require('nodemailer');
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs')
-const {encrypt,decrypt}=require('./middlewares/encryptionAndDecription')
+const {encrypt,decrypt}=require('./middlewares/encryptionAndDecription');
+
 
 
 
@@ -21,10 +22,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: true,
+        
+        origin: process.env.ORIGIN,
         credentials: true,
     })
 );
+app.use(express.urlencoded())
 
 //destructuring all functions from the notes controller
 const { fetchPassword, fetchPasswords, updatePassword, deletePassword, createPassword } = passwordController;
