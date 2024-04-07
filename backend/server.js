@@ -27,7 +27,7 @@ app.use(
         credentials: true,
     })
 );
-app.use(express.urlencoded())
+
 
 //destructuring all functions from the notes controller
 const { fetchPassword, fetchPasswords, updatePassword, deletePassword, createPassword } = passwordController;

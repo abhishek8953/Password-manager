@@ -5,7 +5,7 @@ import RequireAuth from "./RequireAuth";
 import SignupPage from "../pages/SignupPage";
 import LogoutPage from "../pages/LogoutPage";
 import ForgetPasswordPage from "../pages/ForgetPasswordPage";
-import '../Index.css';
+import '../style.css';
 import ResetPassword from "./ResetPassword";
 import Landing from "./Landing";
 
