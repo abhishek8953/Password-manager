@@ -8,7 +8,7 @@ const fetchPasswords = async (req, res) => {
     //find notes
      let passwords = await Password.find({ user: req.user._id })
     //response 
-     
+     console.log(passwords);
     res.json({ notes:passwords})
 
     }catch(err){

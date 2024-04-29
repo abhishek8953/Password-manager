@@ -1,6 +1,5 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
-const { response } = require("express");
 const jwt = require("jsonwebtoken");
 const nodemailer=require('nodemailer')
 
@@ -27,6 +26,7 @@ async function login(req, res) {
     try {
         //get email and password from req body
         const { email, password } = req.body;
+        
 
         //find the user with requested email
         const user = await User.findOne({ email: email });
@@ -43,7 +43,8 @@ async function login(req, res) {
         res.cookie("Authorization", token, {
             expires: new Date(exp),
             httpOnly: true,
-            sameSite: "lax",  //meaning 
+            sameSite: "lax"  //meaning 
+            
         });
         //send it
         res.sendStatus(200);
