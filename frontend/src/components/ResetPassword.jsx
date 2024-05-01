@@ -9,9 +9,10 @@ export default function ResetPassword(){
 
 
     const handleSubmit=(e)=>{  
+        let url=import.meta.env.VITE_API_HOST
                                        
         e.preventDefault();                       //sending new password in the reqbody
-        axios.post('http://localhost:3000/resetpassword/'+token,{newPassword})
+        axios.post(`${url}/resetpassword/`+token,{newPassword})
         .then(res=>{
             if(res.data.status){
                 alert("password change successfully")

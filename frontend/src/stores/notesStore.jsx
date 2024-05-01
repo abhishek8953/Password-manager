@@ -15,6 +15,10 @@ let notesStore = create((set) => ({
     body: "",
   },
 
+  logoutremove:()=>{
+    set({notes:null})
+  },
+
   fetchNotes: async () => {
     const res = await axios.get("/notes");
     console.log(res);

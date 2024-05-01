@@ -10,7 +10,8 @@ export default function ForgetPassword(){
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:3000/forgot-password',{
+        let url=import.meta.env.VITE_API_HOST
+        axios.post(`${url}/forgot-password`,{
             email
         }).then(res=>{
             if(res.data.status){

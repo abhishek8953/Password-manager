@@ -5,7 +5,6 @@ import RequireAuth from "./RequireAuth";
 import SignupPage from "../pages/SignupPage";
 import LogoutPage from "../pages/LogoutPage";
 import ForgetPasswordPage from "../pages/ForgetPasswordPage";
-import '../style.css';
 import ResetPassword from "./ResetPassword";
 import Landing from "./Landing";
 
@@ -18,7 +17,7 @@ function App() {
       <div className="nav-container "> 
       <ul>
           <li >
-            <Link className="hover2" style={{textDecoration:'none'}} to="/">Home</Link>
+            <Link className="hover2" style={{textDecoration:'none',color:"white"}} to="/">Home</Link>
           </li>
           <li>
           <h4 className='made-with-love'>made with<span>&#x2764;</span> </h4>

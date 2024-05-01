@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 
+
+
 const authStore = create((set) => ({
 
     loggedIn: null,
@@ -75,7 +77,10 @@ const authStore = create((set) => ({
     },
     logout: async () => {
         await axios.get('/logout');
+        
         set({ loggedIn: false });
+        
+
     },
 }));
 

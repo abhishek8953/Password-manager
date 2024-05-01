@@ -83,12 +83,13 @@ const forgontPassword=async (req, res) => {
                 pass: process.env.PASS,
             }
         });
-
+        let url=process.env.ORIGIN;
+        
         var mailOptions = {
             from: 'abhishektiwarirt39@gmail.com',
             to: email,
             subject: 'Reset password',
-            text: ` http://localhost:5173/resetpassword/${token}`
+            text: `${url}/resetpassword/${token}`
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
