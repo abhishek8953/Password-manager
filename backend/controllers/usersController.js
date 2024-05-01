@@ -42,7 +42,7 @@ async function login(req, res) {
         //send cookie
         res.cookie("Authorization", token, {
             expires: new Date(exp),
-            secure:true,
+            secure:true
            
             
         });
