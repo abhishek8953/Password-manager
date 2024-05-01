@@ -44,7 +44,7 @@ async function login(req, res) {
             expires: new Date(exp),
             secure:true,
             httpOnly: true,
-            sameSite: "none"  
+            sameSite: "lax"  
            
             
         });
