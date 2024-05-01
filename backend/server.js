@@ -20,21 +20,16 @@ connectToDb();
 //congigure to use json
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//     cors({
-//         origin: "*",
-//         // origin: process.env.ORIGIN,
-//         credentials: true,
-//     })
-// );
+app.use(
+    cors({
+      
+        origin: process.env.ORIGIN,
+        credentials: true,
+    })
+);
 
-// app.use(cors());
 
-app.use(cors({
-    origin: process.env.ORIGIN,
-    headers: ["Content-Type"],
-    credentials: true,
-}));
+
 
 
 //destructuring all functions from the notes controller
