@@ -44,7 +44,7 @@ async function login(req, res) {
             expires: new Date(exp),
             secure:true,
             httpOnly: true,
-            sameSite: "lax"  
+            sameSite: "none"  
            
             
         });
@@ -56,9 +56,7 @@ async function login(req, res) {
     }
 }
 function logout(req, res) {
-    res.clearCookie("Authorization",{ path: '/',domain:"password-manager-8qts.onrender.com" ,secure:true,
-            httpOnly: true,
-            sameSite: "lax" });
+    res.clearCookie("Authorization");
     res.sendStatus(200);
 }
 function checkAuth(req, res) {
