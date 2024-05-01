@@ -57,7 +57,11 @@ async function login(req, res) {
     }
 }
 function logout(req, res) {
-    res.clearCookie("Authorization",{path:"/"});
+    res.clearCookie("Authorization",{
+            secure:true,
+            httpOnly: true,
+            sameSite: "none",
+            path:"/"});
     res.sendStatus(200);
 }
 function checkAuth(req, res) {
