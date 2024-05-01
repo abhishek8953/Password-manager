@@ -44,7 +44,8 @@ async function login(req, res) {
             expires: new Date(exp),
             secure:true,
             httpOnly: true,
-            sameSite: "none"  
+            sameSite: "none",
+            path:"/"
            
             
         });
@@ -56,7 +57,7 @@ async function login(req, res) {
     }
 }
 function logout(req, res) {
-    res.clearCookie("Authorization");
+    res.clearCookie("Authorization",{path:"/"});
     res.sendStatus(200);
 }
 function checkAuth(req, res) {
