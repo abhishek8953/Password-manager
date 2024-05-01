@@ -56,7 +56,7 @@ async function login(req, res) {
     }
 }
 function logout(req, res) {
-    res.clearCookie("Authorization");
+    res.clearCookie("Authorization",{ httpOnly: true, secure: true });
     res.sendStatus(200);
 }
 function checkAuth(req, res) {
