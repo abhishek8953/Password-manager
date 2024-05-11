@@ -13,17 +13,24 @@ const bcrypt = require('bcryptjs')
 const {encrypt,decrypt}=require('./middlewares/encryptionAndDecription');
 
 
-
+const allowedOrigins = [ process.env.ORIGIN,process.env.ORIGIN2];
 
 const app = express();
 connectToDb();
 //congigure to use json
 app.use(express.json());
 app.use(cookieParser());
+// app.use(
+//     cors({
+      
+//         origin: process.env.ORIGIN,
+//         credentials: true,
+//     })
+// );
 app.use(
     cors({
       
-        origin: process.env.ORIGIN,
+        origin:allowedOrigins ,
         credentials: true,
     })
 );
