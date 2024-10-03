@@ -56,6 +56,10 @@ app.delete("/notes/:id", requireAuth, deletePassword);
 app.post('/forgot-password', forgontPassword)
 app.post('/resetpassword/:token', resetpassword)
 
+app.get("/test",(req,res)=>{
+      res.send("hello from server");
+})
+
 const port = process.env.PORT;
 
 app.listen(port, () => {
